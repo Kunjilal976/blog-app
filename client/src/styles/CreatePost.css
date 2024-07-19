@@ -1,0 +1,53 @@
+/* Form.css */
+@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100;1,200&display=swap');
+
+.form-container {
+    max-width: 80%;
+    margin: 2rem auto;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  #blog-heading {
+    margin: 1rem;
+    text-align: center;
+    font-family: 'Victor Mono', monospace;
+  }
+  
+  .blog-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  input,
+  textarea {
+    margin:0.5rem 0px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  input[type="file"] {
+    padding: 10px;
+  }
+  
+  .submit-button {
+    margin:1rem 0rem;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }  
