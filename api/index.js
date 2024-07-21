@@ -23,7 +23,7 @@ app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 app.use(express.static(path.join(__dirname, '/client/build')));
 
-app.get('*', (res,res)=>{
+app.get('*', (req,res)=>{
   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 })
 
