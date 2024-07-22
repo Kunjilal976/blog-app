@@ -8,7 +8,7 @@ const Header = () => {
   const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:4000/user/profile', { credentials: 'include' })
+    fetch('https://blog-app-meena.onrender.com/user/profile', { credentials: 'include' })
       .then(response => {
         if (response.status === 401) {
           setUserInfo(null);
@@ -27,7 +27,7 @@ const Header = () => {
   }, [setUserInfo]); // Dependency array includes only setUserInfo
 
   function logout() {
-    fetch('http://localhost:4000/user/logout', { credentials: 'include', method: 'POST' })
+    fetch('https://blog-app-meena.onrender.com/user/logout', { credentials: 'include', method: 'POST' })
       .then(() => {
         setUserInfo(null);
         setRedirect(true);

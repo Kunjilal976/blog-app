@@ -16,7 +16,7 @@ const EditBlog = () => {
     const [redirect, setRedirect] = useState(false);
 
     useEffect(()=>{
-        fetch(`http://localhost:4000/blog/${id}`).then((response)=>{
+        fetch(`https://blog-app-meena.onrender.com/blog/${id}`).then((response)=>{
             response.json().then((blog)=>{
                 // console.log("blog",blog);
                 setTitle(blog.title)
@@ -43,7 +43,7 @@ const EditBlog = () => {
         // console.log("data",data);
         // console.log("file",data.get(`files`), image[0]);
         ev.preventDefault();
-        const response = await fetch('http://localhost:4000/blog/'+id, {
+        const response = await fetch('https://blog-app-meena.onrender.com//'+id, {
           method: 'PUT',
           body: data,
           credentials: 'include',

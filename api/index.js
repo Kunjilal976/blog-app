@@ -14,7 +14,7 @@ const uri = process.env.MONGODB_URI;
 const port = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: "https://blog-app-meena.onrender.com" }));
 app.use(express.json());
 app.use(cookieParser());
 

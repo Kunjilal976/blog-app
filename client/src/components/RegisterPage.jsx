@@ -26,7 +26,7 @@ const RegisterPage = () => {
     console.log("Ev", ev);
     ev.preventDefault();
 
-    const response = await fetch("http://localhost:4000/user/register", {
+    const response = await fetch("https://blog-app-meena.onrender.com/user/register", {
       method: "POST",
       body: JSON.stringify({ email, username, password }),
       headers: { "Content-Type": "application/json" },

@@ -11,14 +11,14 @@ const Blog = () => {
     const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/blog/${id}`)
+        fetch(`https://blog-app-meena.onrender.com/blog/${id}`)
             .then(response => response.json())
             .then(blog => setBlogInfo(blog))
             .catch(error => console.error('Error fetching blog info:', error));
     }, [id]);
 
     async function deleteBlog() {
-        const response = await fetch(`http://localhost:4000/blog/${id}`, {
+        const response = await fetch(`https://blog-app-meena.onrender.com/blog/${id}`, {
             method: 'DELETE',
             credentials: 'include',
         });
@@ -37,8 +37,8 @@ const Blog = () => {
 
     // Fix the image URL here
     const imagePath = blogInfo.cover.startsWith('uploads/') 
-        ? `http://localhost:4000/${blogInfo.cover}`
-        : `http://localhost:4000/uploads/${blogInfo.cover}`;
+        ? `https://blog-app-meena.onrender.com/${blogInfo.cover}`
+        : `https://blog-app-meena.onrender.com/uploads/${blogInfo.cover}`;
 
     const newLocal = (
         <div className='buttons'>

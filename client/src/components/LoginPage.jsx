@@ -21,7 +21,7 @@ const LoginPage = () => {
     console.log('Password:', password);
     console.log('Event: ',ev);
     ev.preventDefault();
-    const response=await fetch('http://localhost:4000/user/login',
+    const response=await fetch('https://blog-app-meena.onrender.com/user/login',
     {
       method:'POST',
       body:JSON.stringify({email,password}),

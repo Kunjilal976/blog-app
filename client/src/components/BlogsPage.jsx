@@ -5,7 +5,7 @@ const BlogsPage = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/blog/getBlogs')
+    fetch('hhttps://blog-app-meena.onrender.com/blog/getBlogs')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

@@ -25,7 +25,7 @@ const BlogCard = ({
     <div className="blog-card">
       <Link to={`/blog/${_id}`}>
         <div className="image">
-          <img src={"http://localhost:4000/" + cover} alt="Blog" />
+          <img src={"https://blog-app-meena.onrender.com/" + cover} alt="Blog" />
           {/* <img src="1c1672fb907df4e1a1c651a1a352f10b.jpeg" alt="" /> */}
         </div>
       </Link>
