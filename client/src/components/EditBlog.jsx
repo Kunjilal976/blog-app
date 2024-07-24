@@ -43,7 +43,7 @@ const EditBlog = () => {
         // console.log("data",data);
         // console.log("file",data.get(`files`), image[0]);
         ev.preventDefault();
-        const response = await fetch('https://blog-app-meena.onrender.com//'+id, {
+        const response = await fetch(`https://blog-app-meena.onrender.com/${id}`, {
           method: 'PUT',
           body: data,
           credentials: 'include',
