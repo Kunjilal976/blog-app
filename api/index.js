@@ -1,4 +1,3 @@
-// api/server.js
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -14,18 +13,31 @@ const uri = process.env.MONGODB_URI;
 const port = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors({ credentials: true, origin: "https://blog-app-meena.onrender.com" }));
+// const cors = require('cors');
+
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://blog-app-meena.netlify.app'
+];
+
+app.use(cors({
+  origin: function(origin, callback){
+    if(!origin || allowedOrigins.indexOf(origin) !== -1){
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+
+
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Serve static files from the uploads folder
 app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
-
-// app.use(express.static(path.join(__dirname, '/client/dist')));
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-// });
 
 mongoose.connect(uri).then(() => {
   console.log("Connected to MongoDB");
